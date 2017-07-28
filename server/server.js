@@ -5,6 +5,7 @@ const { clientErr, serverErr } = require('./config/err/err.js');
 const middleware = require('./middleware/serverMiddleware.js');
 const api = require('./api/api.js');
 
+//middleware
 middleware(server);
 
 server.use('/api', api);
