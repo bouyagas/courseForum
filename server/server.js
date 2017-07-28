@@ -1,8 +1,8 @@
 const express = require('express');
 const path = require('path');
 const server = express();
-const { clientErr, serverErr } = require('./middleware/err/err');
-const middleware = require('./middleware/serverMiddleware');
+const { clientErr, serverErr } = require('./config/err/err.js');
+const middleware = require('./middleware/serverMiddleware.js');
 const api = require('./api/api.js');
 
 middleware(server);
