@@ -1,0 +1,20 @@
+{
+  "presets": ["env", "react", "stage-3"],
+  "highlightCode": true,
+  "compact": true,
+  "plugins": [
+      ["transform-strict-mode", {
+      "strict": true
+    }],
+
+      ["transform-class-properties", {
+      "spec": true
+    }],
+
+      ["transform-object-rest-spread", {
+      "useBuiltIns": true
+    }],
+
+    ["transform-function-bind"]
+  ]
+}
