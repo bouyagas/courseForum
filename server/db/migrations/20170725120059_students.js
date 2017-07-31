@@ -17,7 +17,7 @@ exports.up = function (knex, Promise) {
 
 exports.down = function (knex, Promise) {
   console.log('Dropping students');
-  return knex.schema.dropTable('student')
+  return knex.schema.dropTable('students')
     .then(() => {
       console.log('Students table was dropped');
     });

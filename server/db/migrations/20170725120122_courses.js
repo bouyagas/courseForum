@@ -4,9 +4,9 @@ exports.up = function (knex, Promise) {
   return knex.schema.createTable('courses', (table) => {
     table.increments('id').unsigned().primary();
     table.string('nameOfTheCourse').notNullable();
-    table.string('nameOfTheTeacher').nullable();
+    table.string('nameOfTheTeacher').notNullable();
     table.string('durationOfTheCourse').notNullable();
-    table.integer('numberOfStudentsTakingTheCourse').nullable();
+    table.integer('numberOfStudentsTakingTheCourse').notNullable();
     table.timestamp('createAt').defaultTo(knex.fn.now());
     table.timestamp('updateAt').defaultTo(knex.fn.now());
   }).then(() => {
@@ -15,7 +15,7 @@ exports.up = function (knex, Promise) {
 };
 
 exports.down = function (knex, Promise) {
-  return knex.schema.dropTable('course')
+  return knex.schema.dropTable('courses')
     .then(() => {
       console.log('Courses table was dropped');
     });

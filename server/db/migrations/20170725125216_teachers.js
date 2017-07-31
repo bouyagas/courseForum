@@ -8,10 +8,6 @@ exports.up = function (knex, Promise) {
     table.string('universityName').notNullable();
     table.timestamp('createAt').defaultTo(knex.fn.now());
     table.timestamp('updateAt').defaultTo(knex.fn.now());
-    table.integer('studentId').references('id').inTable('students').unsigned()
-      .notNullable();
-    table.integer('courseId').references('id').inTable('courses').unsigned()
-      .notNullable();
   }).then(() => {
     console.log('Teachers table was created');
   });
